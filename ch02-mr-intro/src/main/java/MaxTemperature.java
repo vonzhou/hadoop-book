@@ -31,4 +31,3 @@ public class MaxTemperature {
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   }
 }
-// ^^ MaxTemperature

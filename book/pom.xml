@@ -7,11 +7,11 @@
   <version>4.0</version>
   <name>Hadoop: The Definitive Guide, Project</name>
   <url>http://hadoopbook.com</url>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    
+
     <!-- Component versions are defined here -->
     <avro.version>1.7.7</avro.version>
     <crunch.version>0.11.0-hadoop2</crunch.version>
@@ -25,7 +25,7 @@
     <sqoop.version>1.4.5</sqoop.version>
     <zookeeper.version>3.4.6</zookeeper.version>
   </properties>
-  
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -268,7 +268,7 @@
 	    <configuration>
 	      <argLine>-Xmx1024m</argLine>
 	    </configuration>
-      </plugin> 
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
