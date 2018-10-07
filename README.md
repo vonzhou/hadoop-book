@@ -1,45 +1,73 @@
-# Hadoop Book Example Code
 
-This repository contains the example code for [Hadoop: The Definitive Guide, Fourth Edition](http://shop.oreilly.com/product/0636920033448.do)
-by Tom White (O'Reilly, 2014).
 
-Code for the [First], [Second], and [Third] Editions is also available.
+## 5 Hadoop IO
 
-Note that the chapter names and numbering has changed between editions, see
-[Chapter Numbers By Edition](https://github.com/tomwhite/hadoop-book/wiki/Chapter-Numbers-By-Edition).
+[例5-5 String和Text的区别 P116](StringTextComparisonTest.java)
 
-[First]: http://github.com/tomwhite/hadoop-book/tree/1e
-[Second]: http://github.com/tomwhite/hadoop-book/tree/2e
-[Third]: http://github.com/tomwhite/hadoop-book/tree/3e
+[例5-6 遍历Text中的字符 P117](TextIterator.java)
 
-## Building and Running
+[例5-7 实现自定义Writable，例5-8 实现RawComparator P121](TextPair.java)
 
-To build the code, you will first need to have installed Maven and Java. Then type
+[例5-9 实现RawComparator比较TextPair的第一个字段 P125](FirstComparator.java)
 
-```bash
-% mvn package -DskipTests
-```
+[例5-10 写SequenceFile P128](SequenceFileWriteDemo.java)
 
-This will do a full build and create example JAR files in the top-level directory (e.g. 
-`hadoop-examples.jar`).
+[例5-11 读SequenceFile，seek到某个位置，同步点 P130](SequenceFileReadDemo.java)    
 
-To run the examples from a particular chapter, first install the component 
-needed for the chapter (e.g. Hadoop, Pig, Hive, etc), then run the command lines shown 
-in the chapter.
+---
 
-Sample datasets are provided in the [input](input) directory, but the full weather dataset
-is not contained there due to size restrictions. You can find information about how to obtain 
-the full weather dataset on the book's website at [http://www.hadoopbook.com/]
-(http://www.hadoopbook.com/).
+第二部分  MapReduce
 
-## Hadoop Component Versions
+## 6. 开发一个MR应用
 
-This edition of the book works with Hadoop 2. It has not been tested extensively with 
-Hadoop 1, although most of it should work.
+[例6-4 实现Tool接口打印配置属性 P149](ConfigurationPrinter.java)
 
-For the precise versions of each component that the code has been tested with, see 
-[book/pom.xml](book/pom.xml).
+[]()
+[]()
 
-## Copyright
+[]()
+[]()
 
-Copyright (C) 2014 Tom White
+[]()
+[]()
+
+
+## 7. MR是如何工作的
+
+## 8. MR类型和格式
+
+## 9. MR 特性
+
+----
+
+
+第三部分 Hadoop操作			
+
+
+
+[]()
+[]()
+[]()
+[]()
+[]()
+
+[]()
+[]()
+[]()
+[]()
+[]()
+
+[]()
+[]()
+
+[]()
+[]()
+
+[]()
+
+[]()
+[]()
+[]()
+
+[]()
+
