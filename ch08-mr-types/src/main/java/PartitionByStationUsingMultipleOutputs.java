@@ -17,8 +17,7 @@ import org.apache.hadoop.util.ToolRunner;
 public class PartitionByStationUsingMultipleOutputs extends Configured
         implements Tool {
 
-    static class StationMapper
-            extends Mapper<LongWritable, Text, Text, Text> {
+    static class StationMapper extends Mapper<LongWritable, Text, Text, Text> {
 
         private NcdcRecordParser parser = new NcdcRecordParser();
 
@@ -30,8 +29,7 @@ public class PartitionByStationUsingMultipleOutputs extends Configured
         }
     }
 
-    /*[*/static class MultipleOutputsReducer
-            extends Reducer<Text, Text, NullWritable, Text> {
+    static class MultipleOutputsReducer extends Reducer<Text, Text, NullWritable, Text> {
 
         private MultipleOutputs<NullWritable, Text> multipleOutputs;
 
@@ -45,6 +43,7 @@ public class PartitionByStationUsingMultipleOutputs extends Configured
         protected void reduce(Text key, Iterable<Text> values, Context context)
                 throws IOException, InterruptedException {
             for (Text value : values) {
+                // last parameter : base-output path to write the record to. Note: Framework will generate unique filename for the baseOutputPath
                 multipleOutputs.write(NullWritable.get(), value, key.toString());
             }
         }
@@ -54,7 +53,7 @@ public class PartitionByStationUsingMultipleOutputs extends Configured
                 throws IOException, InterruptedException {
             multipleOutputs.close();
         }
-    }/*]*/
+    }
 
     @Override
     public int run(String[] args) throws Exception {
@@ -77,4 +76,3 @@ public class PartitionByStationUsingMultipleOutputs extends Configured
         System.exit(exitCode);
     }
 }
-//^^ PartitionByStationUsingMultipleOutputs
