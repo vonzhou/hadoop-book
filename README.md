@@ -482,7 +482,41 @@ drwxr-xr-x   - storm supergroup          0 2018-10-08 16:49 sorted
 
 ## 6. 开发一个MR应用
 
+-conf 指定配置文件，运行伪分布式模式：
+
+```
+➜  hadoop-book git:(master) ✗ hadoop    fs      -conf   conf/hadoop-localhost.xml       -ls      
+Found 7 items
+-rw-r--r--   1 storm supergroup    1033751 2018-09-30 11:20 1400-8.txt
+drwxr-xr-x   - storm supergroup          0 2018-09-30 10:36 books
+-rw-r--r--   1 storm supergroup       4788 2018-10-08 16:30 numbers.seq
+drwxr-xr-x   - storm supergroup          0 2018-09-30 16:25 output
+-rw-r--r--   1 storm supergroup        119 2018-09-30 10:32 qungle.txt
+-rw-r--r--   1 storm supergroup        168 2018-09-30 16:25 sample.txt.gz
+drwxr-xr-x   - storm supergroup          0 2018-10-08 16:49 sorted
+➜  hadoop-book git:(master) ✗ hadoop    fs      -conf   conf/hadoop-local.xml   -ls     | head
+Found 47 items
+-rw-r--r--   1 storm storm      16384 2018-10-08 17:04 .README.md.swp
+drwxrwxr-x   - storm storm       4096 2018-10-08 17:05 .git
+-rw-rw-r--   1 storm storm        140 2018-09-29 10:50 .gitignore
+drwxrwxr-x   - storm storm       4096 2018-10-08 17:01 .idea
+-rw-rw-r--   1 storm storm   21709965 2018-10-08 16:06 Hadoop- The Definitive Guide, 4th Edition.pdf
+-rw-rw-r--   1 storm storm      23424 2018-10-08 16:51 README.md
+drwxrwxr-x   - storm storm       4096 2018-09-29 10:50 appc
+-rw-rw-r--   1 storm storm    6030082 2018-09-30 10:58 avro-examples.jar
+drwxrwxr-x   - storm storm       4096 2018-09-29 11:31 book
+```
+
+
 [例6-4 实现Tool接口打印配置属性 P149](ConfigurationPrinter.java)
+
+```
+➜  hadoop-book git:(master) ✗ hadoop    ConfigurationPrinter    -conf   conf/hadoop-localhost.xml       \
+                |       grep    yarn.resourcemanager.address=
+yarn.resourcemanager.address=localhost:8032
+➜  hadoop-book git:(master) ✗ hadoop    ConfigurationPrinter    -D      color=yellow    |       grep    color
+color=yellow
+```
 
 []()
 []()
