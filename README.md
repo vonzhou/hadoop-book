@@ -9,6 +9,7 @@
 ```
 
 例2-3,2-4,2-5 Java MapReduce应用找最高温度
+此时没有修改任何配置参数，所以运行在local模式。
 
 ```
 ➜  hadoop-book git:(master) ✗ mvn -DskipTests=true clean compile package                            
